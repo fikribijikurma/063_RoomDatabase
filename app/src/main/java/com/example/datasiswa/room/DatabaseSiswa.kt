@@ -15,11 +15,11 @@ abstract class SiswaDatabase : RoomDatabase() {
         private var Instance: SiswaDatabase? = null
 
         fun getDatabase(context: Context): SiswaDatabase {
-            return Instance ?: synchronized(this) {
+            return (Instance ?: synchronized(this) {
                 Room.databaseBuilder(context, SiswaDatabase::class.java,
                     "siswa_database")
                     .build().also { Instance = it }
-            }
+            })
         }
     }
 }
