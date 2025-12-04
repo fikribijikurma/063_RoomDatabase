@@ -1,5 +1,6 @@
 package com.example.datasiswa.view
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -116,8 +117,8 @@ fun ListSiswa(
                 person ->  DataSiswa(
             siswa = person,
             modifier = Modifier
-                .padding(dimensionResource(id = R.dimen.padding_small)))
-                .clickable { onSiswaClick(person) }
+                .padding(dimensionResource(id = R.dimen.padding_small))
+                .clickable { onSiswaClick(person) })
         }
     }
 }
